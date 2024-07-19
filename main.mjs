@@ -2,7 +2,6 @@ import { app, BrowserWindow } from 'electron';
 import { resolve, join } from 'path';
 import { fileURLToPath } from 'url';
 
-// Corrigindo a referência de __dirname em ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = resolve(__filename, '..');
 
@@ -10,6 +9,8 @@ function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 1240,
     height: 860,
+    icon: join(__dirname, 'assets', 'icon.png'),
+    title: 'Sell.er',
     webPreferences: {
       preload: join(__dirname, 'preload.mjs'),
       nodeIntegration: true,
