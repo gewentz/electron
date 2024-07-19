@@ -28,7 +28,7 @@ const App: React.FC = () => {
 
   return (
     <div id='main-frame' className='w-full bg-zinc-600 h-screen p-3 flex flex-col gap-1.5'>
-        <div id='menu-open' className='flex flex-row justify-between  items-center w-full bg-zinc-500 px-5 py-2 shadow-md'>
+        <div id='menu-open' className='flex flex-row justify-between  items-center w-full bg-zinc-500 px-5 py-2 shadow-md '>
           <button onClick={() => setActivePage('home')} className='border border-blue-400 bg-slate-600 text-zinc-100 rounded-md w-52 hover:bg-slate-800 hover:text-blue-400 h-9 flex flex-nowrap gap-4 justify-center items-center'><Home/> Inicio</button>
 
           <button onClick={() => setActivePage('stock')} className='border border-blue-400 bg-slate-600 text-zinc-100 rounded-md w-52 hover:bg-slate-800 hover:text-blue-400 h-9 flex flex-nowrap gap-4 justify-center items-center'><Package/> Estoque</button>
@@ -39,7 +39,7 @@ const App: React.FC = () => {
 
           <button onClick={() => setActivePage('receipt')} className='border border-blue-400 bg-slate-600 text-zinc-100 rounded-md w-52 hover:bg-slate-800 hover:text-blue-400 h-9 flex flex-nowrap gap-4 justify-center items-center'><ScrollText/> NF-e</button>
         </div>
-      <div id='screen-content' className=' rounded-sm bg-zinc-500 w-full flex-grow p-3 shadow-md'>
+      <div id='screen-content' className=' rounded-smw-full flex-grow p-3 shadow-shape bg-zinc-600'>
       {renderPage()}
         
       </div>
