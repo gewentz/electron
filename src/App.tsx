@@ -1,11 +1,11 @@
 import { Home, Package, Receipt, NotepadTextDashed, ScrollText } from "lucide-react";
-import HomePage from '../pages/page-home/pageHome'
-import StockPage from '../pages/page-stock/pageStock'
-import CheckoutPage from '../pages/page-checkout/pageCheckout'
-import ReceiptPage from '../pages/page-receipt/pageReceipt'
-import ReportPage from '../pages/page-report/pageReport'
+import StockPage from '../pages/page-stock/pageStock';
+import CheckoutPage from '../pages/page-checkout/pageCheckout';
+import ReceiptPage from '../pages/page-receipt/pageReceipt';
+import ReportPage from '../pages/page-report/pageReport';
 
 import React, { useState } from 'react';
+import PageHome from "../pages/page-home/pageHome";
 
 const App: React.FC = () => {
 
@@ -22,7 +22,7 @@ const App: React.FC = () => {
         return <ReportPage />;
       case 'home':
       default:
-        return <HomePage />;
+        return <PageHome />;
     }
   };
 
@@ -39,9 +39,9 @@ const App: React.FC = () => {
 
           <button onClick={() => setActivePage('receipt')} className='border border-blue-400 bg-slate-600 text-zinc-100 rounded-md w-52 hover:bg-slate-800 hover:text-blue-400 h-9 flex flex-nowrap gap-4 justify-center items-center'><ScrollText/> NF-e</button>
         </div>
-      <div id='screen-content' className=' rounded-smw-full flex-grow p-3 shadow-shape bg-zinc-600'>
+      <div id='screen-content' className=' rounded-sm w-full flex-grow px-3 py-1 shadow-shape bg-pattern bg-no-repeat bg-center gap-3'>
+
       {renderPage()}
-        
       </div>
     </div>
 
