@@ -24,28 +24,28 @@ export default function Salles() {
         </div>
 
         <div id="Header" className="bg-slate-500 w-full rounded-md px-5 py-1 flex flex-row justify-between items-center shadow-shape">
-          <div className="flex flex-row gap-1 text-zinc-100 border rounded p-1 uppercase font-semibold">
+          <div className="flex flex-row gap-1 text-zinc-100 p-1 uppercase font-semibold">
             <h2>Caixa:</h2>
             {isCheckoutOpen ? <span className="text-lime-500">Aberto</span> :
             <span className="text-red-500">Fechado</span>}
             
           </div>
-          {isCheckoutOpen ? (<div className="flex flex-row gap-1 text-zinc-100 border rounded p-1 uppercase font-semibold">
+          {isCheckoutOpen ? (<div className="flex flex-row gap-1 text-zinc-100 p-1 uppercase font-semibold">
             <h2>Abertura:</h2>
             <span className="text-zinc-200">06:00</span>
-          </div>): <div className="flex flex-row gap-6 text-zinc-100 border rounded p-1 uppercase font-semibold">
+          </div>): <div className="flex flex-row gap-6 text-zinc-100 p-1 uppercase font-semibold">
             <div className="flex "><h2>Abertura:</h2>
             <span className="text-zinc-200">06:00</span></div>
             <div className="flex "><h2>Fechamento:</h2>
             <span className="text-zinc-200">14:00</span></div>
           </div>}
-          <div className="flex flex-row gap-1 text-zinc-100 border rounded p-1 uppercase font-semibold">
+          <div className="flex flex-row gap-1 text-zinc-100 p-1 uppercase font-semibold">
             <h2>Numero do caixa:</h2>
             <span className="text-zinc-200">#15680</span>
           </div>
-          <div className="flex flex-row gap-1 text-zinc-100 border rounded p-1 uppercase font-semibold">
-            {isCheckoutOpen ? <span className="text-red-700 cursor-pointer" onClick={closeCheckout}>Fechar</span> :
-            <span className="text-lime-700 cursor-pointer" onClick={openCheckout}>Abrir</span>}
+          <div className="flex flex-row gap-1 text-zinc-100 p-1 uppercase font-semibold">
+            {isCheckoutOpen ? <span className="w-auto bg-red-600 rounded-md p-1 shadow-shape font-bold text-zinc-200 hover:text-red-500 hover:bg-slate-800 cursor-pointer" onClick={closeCheckout}>Fechar</span> :
+            <span className="w-auto bg-lime-600 rounded-md p-1 shadow-shape font-bold text-zinc-200 hover:text-lime-500 hover:bg-slate-800 cursor-pointer" onClick={openCheckout}>Abrir</span>}
           </div>
         </div>
 
@@ -90,290 +90,30 @@ export default function Salles() {
           </div>
 
           <div className="flex flex-row justify-between items-center font-semibold uppercase px-3 text-zinc-200">
-          <span className="flex flex-row justify-center items-center px-2 w-52">
-              789689958772
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="w-full grow flex flex-row items-center px-2">
-              Skol Lata 350ml
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              und
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              24
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              4,00
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              96,00
-            </span>
-          </div>
-
-          <div className="flex flex-row justify-between items-center font-semibold uppercase px-3 text-zinc-200">
-          <span className="flex flex-row justify-center items-center px-2 w-52">
-              789689958772
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="w-full grow flex flex-row items-center px-2">
-              Skol Lata 350ml
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              und
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              24
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              4,00
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              96,00
-            </span>
-          </div>
-
-          <div className="flex flex-row justify-between items-center font-semibold uppercase px-3 text-zinc-200">
-          <span className="flex flex-row justify-center items-center px-2 w-52">
-              789689958772
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="w-full grow flex flex-row items-center px-2">
-              Skol Lata 350ml
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              und
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              24
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              4,00
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              96,00
-            </span>
-          </div>
-
-          <div className="flex flex-row justify-between items-center font-semibold uppercase px-3 text-zinc-200">
-          <span className="flex flex-row justify-center items-center px-2 w-52">
-              789689958772
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="w-full grow flex flex-row items-center px-2">
-              Skol Lata 350ml
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              und
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              24
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              4,00
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              96,00
-            </span>
-          </div>
-
-          <div className="flex flex-row justify-between items-center font-semibold uppercase px-3 text-zinc-200">
-          <span className="flex flex-row justify-center items-center px-2 w-52">
-              789689958772
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="w-full grow flex flex-row items-center px-2">
-              Skol Lata 350ml
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              und
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              24
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              4,00
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              96,00
-            </span>
-          </div>
-
-          <div className="flex flex-row justify-between items-center font-semibold uppercase px-3 text-zinc-200">
-          <span className="flex flex-row justify-center items-center px-2 w-52">
-              789689958772
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="w-full grow flex flex-row items-center px-2">
-              Skol Lata 350ml
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              und
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              24
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              4,00
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              96,00
-            </span>
-          </div>
-
-          <div className="flex flex-row justify-between items-center font-semibold uppercase px-3 text-zinc-200">
-          <span className="flex flex-row justify-center items-center px-2 w-52">
-              789689958772
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="w-full grow flex flex-row items-center px-2">
-              Skol Lata 350ml
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              und
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              24
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              4,00
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              96,00
-            </span>
-          </div>
-
-          <div className="flex flex-row justify-between items-center font-semibold uppercase px-3 text-zinc-200">
-          <span className="flex flex-row justify-center items-center px-2 w-52">
-              789689958772
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="w-full grow flex flex-row items-center px-2">
-              Skol Lata 350ml
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              und
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              24
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              4,00
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              96,00
-            </span>
-          </div>
-
-          <div className="flex flex-row justify-between items-center font-semibold uppercase px-3 text-zinc-200">
-          <span className="flex flex-row justify-center items-center px-2 w-52">
-              789689958772
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="w-full grow flex flex-row items-center px-2">
-              Skol Lata 350ml
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              und
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              24
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              4,00
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              96,00
-            </span>
-          </div>
-
-          <div className="flex flex-row justify-between items-center font-semibold uppercase px-3 text-zinc-200">
-          <span className="flex flex-row justify-center items-center px-2 w-52">
-              789689958772
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="w-full grow flex flex-row items-center px-2">
-              Skol Lata 350ml
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              und
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              24
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              4,00
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              96,00
-            </span>
-          </div>
-
-          <div className="flex flex-row justify-between items-center font-semibold uppercase px-3 text-zinc-200">
-          <span className="flex flex-row justify-center items-center px-2 w-52">
-              789689958772
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="w-full grow flex flex-row items-center px-2">
-              Skol Lata 350ml
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              und
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-28">
-              24
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              4,00
-            </span>
-            <div className="w-px bg-slate-900 h-full"></div>
-            <span className="flex flex-row justify-center items-center px-2 w-48">
-              96,00
-            </span>
-          </div>
+              <span className="flex flex-row justify-center items-center px-2 w-52">
+                789689958772
+              </span>
+              <div className="w-px bg-slate-900 h-full"></div>
+              <span className="w-full grow flex flex-row items-center px-2">
+                Skol Lata 350ml
+              </span>
+              <div className="w-px bg-slate-900 h-full"></div>
+              <span className="flex flex-row justify-center items-center px-2 w-28">
+                und
+              </span>
+              <div className="w-px bg-slate-900 h-full"></div>
+              <span className="flex flex-row justify-center items-center px-2 w-28">
+                24
+              </span>
+              <div className="w-px bg-slate-900 h-full"></div>
+              <span className="flex flex-row justify-center items-center px-2 w-48">
+                4,00
+              </span>
+              <div className="w-px bg-slate-900 h-full"></div>
+              <span className="flex flex-row justify-center items-center px-2 w-48">
+                96,00
+              </span>
+            </div>
           </div>
           <div className="flex flex-col gap-2 w-1/3 bg-slate-500 rounded-md p-2 h-40">
           <div className="flex flex-col  bg-slate-500 rounded-md p-2 h-24 gap-2">
