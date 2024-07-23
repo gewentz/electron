@@ -1,7 +1,17 @@
 import MainMenu from "../../components/mainMenu";
-import React from "react";
+import React, { useState } from "react";
 
 export default function Salles() {
+
+  const [isCheckoutOpen, setCheckoutOpen] = useState(false);
+
+  function openCheckout(){
+    setCheckoutOpen(true);
+  };
+  function closeCheckout(){
+    setCheckoutOpen(false);
+  };
+
   return (
     <div id='main-frame' className='w-full bg-zinc-600 h-screen p-3 flex flex-col gap-1.5'>
         <MainMenu/>
@@ -16,18 +26,26 @@ export default function Salles() {
         <div id="Header" className="bg-slate-500 w-full rounded-md px-5 py-1 flex flex-row justify-between items-center shadow-shape">
           <div className="flex flex-row gap-1 text-zinc-100 border rounded p-1 uppercase font-semibold">
             <h2>Caixa:</h2>
-            <span className="text-lime-500">Aberto</span>
+            {isCheckoutOpen ? <span className="text-lime-500">Aberto</span> :
+            <span className="text-red-500">Fechado</span>}
+            
           </div>
-          <div className="flex flex-row gap-1 text-zinc-100 border rounded p-1 uppercase font-semibold">
+          {isCheckoutOpen ? (<div className="flex flex-row gap-1 text-zinc-100 border rounded p-1 uppercase font-semibold">
             <h2>Abertura:</h2>
             <span className="text-zinc-200">06:00</span>
-          </div>
+          </div>): <div className="flex flex-row gap-6 text-zinc-100 border rounded p-1 uppercase font-semibold">
+            <div className="flex "><h2>Abertura:</h2>
+            <span className="text-zinc-200">06:00</span></div>
+            <div className="flex "><h2>Fechamento:</h2>
+            <span className="text-zinc-200">14:00</span></div>
+          </div>}
           <div className="flex flex-row gap-1 text-zinc-100 border rounded p-1 uppercase font-semibold">
             <h2>Numero do caixa:</h2>
             <span className="text-zinc-200">#15680</span>
           </div>
           <div className="flex flex-row gap-1 text-zinc-100 border rounded p-1 uppercase font-semibold">
-            <span className="text-red-700 cursor-pointer">Fechar</span>
+            {isCheckoutOpen ? <span className="text-red-700 cursor-pointer" onClick={closeCheckout}>Fechar</span> :
+            <span className="text-lime-700 cursor-pointer" onClick={openCheckout}>Abrir</span>}
           </div>
         </div>
 
