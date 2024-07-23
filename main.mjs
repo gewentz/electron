@@ -7,7 +7,7 @@ const __dirname = resolve(__filename, '..');
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
-    width: 1240,
+    width: 1480,
     height: 860,
     icon: join(__dirname, 'assets', 'icon.png'),
     title: 'Sell.er',
