@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "main.mjs",
   "scripts": {
-    "start": "vite",
+    "start": "vite ",
     "dev": "cross-env NODE_ENV=development electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "forge": "electron-forge start",

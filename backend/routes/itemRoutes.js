@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const express = require('express');
 const router = express.Router();
 const Item = require('../models/item');
@@ -9,7 +10,7 @@ router.post('/', async (req, res) => {
     await item.save();
     res.status(201).send(item);
   } catch (err) {
-    res.status(400).send(err);
+    res.status(400).send({ error: 'Error creating item', details: err });
   }
 });
 
@@ -19,7 +20,7 @@ router.get('/', async (req, res) => {
     const items = await Item.find();
     res.status(200).send(items);
   } catch (err) {
-    res.status(500).send(err);
+    res.status(500).send({ error: 'Error fetching items', details: err });
   }
 });
 
@@ -27,21 +28,21 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const item = await Item.findById(req.params.id);
-    if (!item) return res.status(404).send();
+    if (!item) return res.status(404).send({ error: 'Item not found' });
     res.status(200).send(item);
   } catch (err) {
-    res.status(500).send(err);
+    res.status(500).send({ error: 'Error fetching item', details: err });
   }
 });
 
 // Read an item by name
 router.get('/name/:name', async (req, res) => {
   try {
-    const item = await Item.findByName(req.params.name);
-    if (!item) return res.status(404).send();
+    const item = await Item.findOne({ name: req.params.name });
+    if (!item) return res.status(404).send({ error: 'Item not found' });
     res.status(200).send(item);
   } catch (err) {
-    res.status(500).send(err);
+    res.status(500).send({ error: 'Error fetching item', details: err });
   }
 });
 
@@ -49,10 +50,10 @@ router.get('/name/:name', async (req, res) => {
 router.patch('/:id', async (req, res) => {
   try {
     const item = await Item.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
-    if (!item) return res.status(404).send();
+    if (!item) return res.status(404).send({ error: 'Item not found' });
     res.status(200).send(item);
   } catch (err) {
-    res.status(400).send(err);
+    res.status(400).send({ error: 'Error updating item', details: err });
   }
 });
 
@@ -60,10 +61,10 @@ router.patch('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
     const item = await Item.findByIdAndDelete(req.params.id);
-    if (!item) return res.status(404).send();
-    res.status(200).send(item);
+    if (!item) return res.status(404).send({ error: 'Item not found' });
+    res.status(200).send({ message: 'Item deleted successfully' });
   } catch (err) {
-    res.status(500).send(err);
+    res.status(500).send({ error: 'Error deleting item', details: err });
   }
 });
 
