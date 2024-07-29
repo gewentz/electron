@@ -6,6 +6,7 @@ const Item = require('../models/item');
 // Create a new item
 router.post('/', async (req, res) => {
   try {
+    console.log('Request body:', req.body);
     const item = new Item(req.body);
     await item.save();
     res.status(201).send(item);
