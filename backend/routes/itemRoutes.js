@@ -4,14 +4,26 @@ const router = express.Router();
 const Item = require('../models/item');
 
 // Create a new item
-router.post('/', async (req, res) => {
+router.post('/items', async (req, res) => {
+  const { code, name, unit, quantity, price } = req.body;
+
   try {
-    console.log('Request body:', req.body);
-    const item = new Item(req.body);
-    await item.save();
-    res.status(201).send(item);
-  } catch (err) {
-    res.status(400).send({ error: 'Error creating item', details: err });
+    // Verifica se um item com o mesmo código de barras já existe
+    let item = await Item.findOne({ code });
+
+    if (item) {
+      // Se o item existir, atualize a quantidade
+      item.quantity += parseInt(quantity, 10);
+      await item.save();
+      res.status(200).json(item);
+    } else {
+      // Se o item não existir, crie um novo
+      item = new Item({ code, name, unit, quantity, price });
+      await item.save();
+      res.status(201).json(item);
+    }
+  } catch (error) {
+    res.status(400).json({ error: 'Error creating or updating item', details: error });
   }
 });
 
