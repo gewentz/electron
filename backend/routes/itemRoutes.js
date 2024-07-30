@@ -4,7 +4,7 @@ const router = express.Router();
 const Item = require('../models/item');
 
 // Create a new item
-router.post('/items', async (req, res) => {
+router.post('/', async (req, res) => {
   const { code, name, unit, quantity, price } = req.body;
 
   try {
@@ -70,10 +70,10 @@ router.patch('/:id', async (req, res) => {
   }
 });
 
-// Delete an item by ID
-router.delete('/:id', async (req, res) => {
+// Delete an item by code
+router.delete('/delete/:code', async (req, res) => {
   try {
-    const item = await Item.findByIdAndDelete(req.params.id);
+    const item = await Item.findOneAndDelete({ code: req.params.code });
     if (!item) return res.status(404).send({ error: 'Item not found' });
     res.status(200).send({ message: 'Item deleted successfully' });
   } catch (err) {
